@@ -51,7 +51,7 @@ void inicia_DMA{
 fd = open("/dev/mem", O_RDWR | O_SYNC);
 iomap_ptr = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE$
 
-p= (volatile unsigned int *)iomap_ptr;
+p = (volatile unsigned int *)iomap_ptr;
 }
 
 void finaliza_DMA{
