@@ -12,10 +12,16 @@
 
 int main(int argc, char *argv[])
 {
+#define MAP_BASE (0x41210000)
+#define MAP_RANGE (0x10000)
+
+
+
     int i;
     int fd;
     int result;
     int *map;  /* mmapped array of int's */
+	
 
     /* Open a file for writing.
      *  - Creating the file if it doesn't exist.
@@ -23,6 +29,7 @@ int main(int argc, char *argv[])
      *
      * Note: "O_WRONLY" mode is not sufficient when mmaping.
      */
+
     fd = open(FILEPATH, O_RDWR | O_CREAT | O_TRUNC, (mode_t)0600);
     if (fd == -1) {
 	perror("Error opening file for writing");
@@ -57,7 +64,7 @@ int main(int argc, char *argv[])
 
     /* Now the file is ready to be mmapped.
      */
-    map = mmap(0, FILESIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    map = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd,MAP_BASE);
     if (map == MAP_FAILED) {
 	close(fd);
 	perror("Error mmapping the file");
@@ -66,9 +73,8 @@ int main(int argc, char *argv[])
     
     /* Now write int's to the file as if it were memory (an array of ints).
      */
-    for (i = 1; i <=NUMINTS; ++i) {
-	map[i] = 2 * i; 
-    }
+	//for (i = 1 ; i < 100; i++)
+	map[0] = 0xB;
 
     /* Don't forget to free the mmapped memory
      */

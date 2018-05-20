@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     int i;
     int fd;
     int *map;  /* mmapped array of int's */
+    char data[100];
 
     fd = open(FILEPATH, O_RDONLY);
     if (fd == -1) {
@@ -31,9 +32,12 @@ int main(int argc, char *argv[])
     
     /* Read the file int-by-int from the mmap
      */
-    for (i = 1; i <=NUMINTS; ++i) {
-	printf("%d: %d\n", i, map[i]);
-    }
+	ssize_t read(fd, data, 100);
+	
+	for (i = 1; i <= 100; i++)
+{
+	printf("%c",data[i]);
+}
 
     if (munmap(map, FILESIZE) == -1) {
 	perror("Error un-mmapping the file");
