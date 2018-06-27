@@ -1,0 +1,1 @@
+float *mean(float **matriz);
