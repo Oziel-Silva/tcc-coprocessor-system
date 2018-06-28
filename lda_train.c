@@ -11,6 +11,9 @@
 #include "mean.h"
 #include "cov.h"
 #include "sigma.h"
+#include "cov_hw.h"
+#include  "media_hw.h"
+
 
 
 void main(void)
@@ -54,13 +57,21 @@ void main(void)
 
 
 
-    mean_1 = mean(class_one_data);
-    mean_2 = mean(class_two_data);
+    mean_1 = media_hw(class_one_data);
+    mean_2 = media_hw(class_two_data);
     
-    sigma_1 = cov(class_one_data , mean_1);
-	sigma_2 = cov(class_two_data , mean_2);
+    sigma_1 = cov_hw(class_one_data , mean_1);
+	sigma_2 = cov_hw(class_two_data , mean_2);
 
     s_sigma = sigma(sigma_1, sigma_2);
+
+
+
+
+
+
+
+
 
 
 

@@ -19,7 +19,7 @@
 #define MAP_RANGE (0x10000)
 
 
-float **cov_hw(float **class_data)
+float **cov_hw(float **class_data, float *f_media)
 {
     int i,k;
     int fd;
