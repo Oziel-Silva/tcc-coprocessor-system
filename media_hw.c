@@ -30,7 +30,7 @@ float *mean_hw(float **class_data)
     
 
 
-    float float *media_res = (float**) malloc(sizeof(float*) * 6);
+    float *media_res = (float*) malloc(sizeof(float*) * 6);
     
   
       
@@ -120,4 +120,4 @@ float *mean_hw(float **class_data)
       return media_res;
  }
 
-
+}

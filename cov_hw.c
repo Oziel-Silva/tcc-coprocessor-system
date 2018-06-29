@@ -19,20 +19,20 @@
 #define MAP_RANGE (0x10000)
 
 
-float **cov_hw(float **class_data, float *f_media)
+float **cov_hw(float **class_one_data, float *media)
 {
+    float *f_media = media;
     int i,k;
     int fd;
     int result;
     float *map;
-    float cov_res [6][6];
     int z,w,n;
     float cov;
     float sum_cov[4];
     
 
 
-    float float **cov_res = (float**) malloc(sizeof(float*) * 6);
+    float **cov_res = (float**) malloc(sizeof(float*) * 6);
     
     for(i=0; i < 6; i++)
     {
@@ -119,5 +119,5 @@ for(k=0; k<6; k++)
   return cov_res;
 
 
-
+}
 }

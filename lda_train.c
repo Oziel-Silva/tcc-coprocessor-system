@@ -7,13 +7,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "data_loading.h"
-#include "mean.h"
-#include "cov.h"
-#include "sigma.h"
+//#include "data_loading.h"
+//#include "mean.h"
+//#include "cov.h"
 #include "cov_hw.h"
 #include  "media_hw.h"
-
+#include "sigma.h"
 
 
 void main(void)
@@ -50,8 +49,8 @@ void main(void)
 		{
 			for(j = 0; j < 80; j++)
 				{
-	  				fscanf(class_data_1,"%f",&class_one_data[j][i]);
-					fscanf(class_data_2,"%f",&class_two_data[j][i]);
+ 				fscanf(class_data_1,"%f",&class_one_data[j][i]);
+				fscanf(class_data_2,"%f",&class_two_data[j][i]);
 				}
 		} 
 
@@ -61,7 +60,7 @@ void main(void)
     mean_2 = media_hw(class_two_data);
     
     sigma_1 = cov_hw(class_one_data , mean_1);
-	sigma_2 = cov_hw(class_two_data , mean_2);
+    sigma_2 = cov_hw(class_two_data , mean_2);
 
     s_sigma = sigma(sigma_1, sigma_2);
 
