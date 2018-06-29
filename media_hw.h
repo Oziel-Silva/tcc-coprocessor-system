@@ -1,1 +1,1 @@
-float *mean_hw(float **class_data);
+float *media_hw(float **class_data);

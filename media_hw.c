@@ -19,8 +19,9 @@
 #define MAP_RANGE (0x10000)
 
 
-float *mean_hw(float **class_data)
+float *media_hw(float **s_class_data)
 {
+    float **class_data = s_class_data;
     int i,k;
     int fd;
     int result;

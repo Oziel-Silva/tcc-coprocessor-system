@@ -11,7 +11,7 @@
 //#include "mean.h"
 //#include "cov.h"
 #include "cov_hw.h"
-#include  "media_hw.h"
+#include "media_hw.h"
 #include "sigma.h"
 
 
