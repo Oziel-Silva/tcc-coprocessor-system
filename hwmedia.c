@@ -12,7 +12,7 @@
 #define MAP_RANGE (0x10000)
 
 
-float *media_hw(float **class_data)
+float *media(void)
 {
 
 int buffer[40];
@@ -22,12 +22,17 @@ int buffer[40];
     int *map;
     int somas[4];
     int media;
-    float f_media[6];
+    //float f_media[6];
     int somatorio;
+    float *f_media = (float*) malloc(sizeof(float)* 6);
+	
+
+
     FILE *file;
     file = fopen("class_one_data","r");
     fseek(file,0,SEEK_SET);
-    /* Open a file for writing.
+    
+/* Open a file for writing.
     *  - Creating the file if it doesn't exist.
     *  - Truncating it to 0 size if it already exists. (not really needed)
     *
@@ -136,5 +141,5 @@ int buffer[40];
       printf("média %d = %f \n",k+1, f_media[k]);
 
     }
-
+return f_media;
 }

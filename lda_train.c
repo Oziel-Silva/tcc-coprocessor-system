@@ -10,7 +10,7 @@
 #include "mean.h"
 #include "cov.h"
 #include "cov_hw.h"
-#include "hw-media.h"
+#include "hwmedia.h"
 #include "sigma.h"
 
 
@@ -57,10 +57,11 @@
 		} 
 
 
-        mean_1 = mean(class_one_data);
-        //mean_2 = media(class_two_data);
-
-        sigma_1 = cov(class_one_data , mean_1);
+       // mean_1 = mean(class_one_data);
+	mean_2 = media();
+	for(i=0;i<7;i++)
+	printf("%f\n",mean_2[i]);
+        //sigma_1 = cov(class_one_data , mean_1);
         //sigma_2 = cov(class_two_data , mean_2);
 
        // s_sigma = sigma(sigma_1, sigma_2);
