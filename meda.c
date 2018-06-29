@@ -57,6 +57,19 @@ float *media_hw(float **class_data)
 
 
 
+          for(i=1;i<=20;i++)
+          {
+              map[i] = class_data[i-1][0];
+           }
+
+
+        map[0] = 0x1;
+        map[0] = 0x00;
+
+        somas[0] = map[21];
+        for(i=21;i<=40;i++)
+          {
+
 
     map = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
     if (map == MAP_FAILED)
@@ -71,42 +84,46 @@ float *media_hw(float **class_data)
     {
     
 
-        for(i=1;i<=20;i++)
-           {
-               map[i] = class_data[i-1][0];
-            }
+          for(i=1;i<=20;i++)
+          {
+              map[i] = class_data[i-1][0];
+           }
 
 
         map[0] = 0x1;
         map[0] = 0x00;
+
         somas[0] = map[21];
 
 
         for(i=21;i<=40;i++)
-           {
-                map[i-20] = class_data[i-1][0];
-            }
-
-        map[0] = 0x01;
-        map[0] = 0x00;
-        somas[1] = map[21];
-
-        for(i=41;i<=60;i++)
-            {
-                map[i-40] = class_data[i-1][0];
-            }
-
-        map[0] = 0x01;
-        map[0] = 0x00;
-        somas[2] = map[21];
-
-        for(i=61;i<=80;i++)
-            {
-                map[i-60] = class_data[i-1][0];
-            }
+          {
+             map[i-20] = class_data[i-1][0];
+          }
 
       map[0] = 0x01;
       map[0] = 0x00;
+
+      somas[1] = map[21];
+        printf(" soma 0 = %f %d\n ",somas[1],0);
+      for(i=41;i<=60;i++)
+          {
+            map[i-40] = class_data[i-1][0];
+          }
+
+      map[0] = 0x01;
+      map[0] = 0x00;
+
+      somas[2] = map[21];
+
+      for(i=61;i<=80;i++)
+          {
+          map[i-60] = class_data[i-1][0];
+          }
+
+      map[0] = 0x01;
+      map[0] = 0x00;
+
       somas[3] = map[21];
 
       map[22] = somas[0];
@@ -122,6 +139,6 @@ float *media_hw(float **class_data)
 
       media_res[k] = media;
 
+        return media_res;
   }
-  return media_res;
 }
