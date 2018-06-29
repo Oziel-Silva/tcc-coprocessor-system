@@ -19,7 +19,7 @@
 #define MAP_RANGE (0x10000)
 
 
-void main(void)
+void ip(char *class)
 {
     int buffer[40];
     int i,k;
@@ -30,8 +30,10 @@ void main(void)
     int media;
     float f_media[6];
     int somatorio;
+
+
     FILE *file;
-    file = fopen("class_one_data","r");
+    file = fopen(class,"r");
     fseek(file,0,SEEK_SET);
     /* Open a file for writing.
     *  - Creating the file if it doesn't exist.
@@ -129,7 +131,7 @@ void main(void)
       somas[3] = map[21];
 
       map[22] = somas[0];
-      map[23] = somas[1];
+      map[23] = somas[1];ewd
       map[24] = somas[2];
       map[25] = somas[3];
 
@@ -179,7 +181,7 @@ for(i = 0; i < 6; i++)
 
 //printf("%f\n",class_one_data[78][5]);
 float cov_class_one [6][6];
-int cov_class_two [6][6];
+float cov_class_two [6][6];
 
 int z,w,n;
 float cov;
