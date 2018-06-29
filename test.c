@@ -83,65 +83,6 @@ void main(void)
         exit(EXIT_FAILURE);
     }
 
-    //for para pegar toda as médias (6 médias)
-
-
-      for(k=0; k<6; k++)
-      {
-          for(i=1;i<=20;i++)
-          {
-              fscanf(file,"%f",&map[i]);
-          }
-
-          map[0] = 0x1;
-         map[0] = 0x00;
-
-          somas[0] = map[21];
-
-      for(i=21;i<=40;i++)
-          {
-              fscanf(file,"%f",&map[i-20]);
-          }
-
-      map[0] = 0x01;
-      map[0] = 0x00;
-
-      somas[1] = map[21];
-
-      for(i=41;i<=60;i++)
-          {
-              fscanf(file,"%f",&map[i-40]);
-          }
-
-      map[0] = 0x01;
-      map[0] = 0x00;
-
-      somas[2] = map[21];
-
-      for(i=61;i<=80;i++)
-          {
-              fscanf(file,"%f",&map[i-60]);
-          }
-
-      map[0] = 0x01;
-      map[0] = 0x00;
-
-      somas[3] = map[21];
-
-      map[22] = somas[0];
-      map[23] = somas[1];
-      map[24] = somas[2];
-      map[25] = somas[3];
-
-      map[0] = 0x2;
-      map[0] = 0x0;
-
-      media = map[26];
-
-      f_media[k] = *((float*)&media);
-      printf("média %d = %f \n",k+1, f_media[k]);
-
-    }
 
 
 float class_one_data[80][6];
@@ -175,6 +116,72 @@ for(i = 0; i < 6; i++)
       }
    }               
  
+
+
+    //for para pegar toda as médias (6 médias)
+
+
+      for(k=0; k<6; k++)
+      {
+          for(i=1;i<=20;i++)
+          {
+             // fscanf(file,"%f",&map[i]);
+            map[i] = class_data_1[i-1][k];
+          }
+
+            map[0] = 0x1;
+            map[0] = 0x00;
+
+            somas[0] = map[21];
+
+      for(i=21;i<=40;i++)
+          {
+              //fscanf(file,"%f",&map[i-20]);
+             map[i-20] = class_data_1[i-1][k];
+
+      map[0] = 0x01;
+      map[0] = 0x00;
+
+      somas[1] = map[21];
+
+      for(i=41;i<=60;i++)
+          {
+              //fscanf(file,"%f",&map[i-40]);
+             map[i-40] = class_data_1[i-1][k];
+          }
+
+      map[0] = 0x01;
+      map[0] = 0x00;
+
+      somas[2] = map[21];
+
+      for(i=61;i<=80;i++)
+          {
+              //fscanf(file,"%f",&map[i-60]);
+             map[i-60] = class_data_1[i-1][k];
+          }
+
+      map[0] = 0x01;
+      map[0] = 0x00;
+
+      somas[3] = map[21];
+
+      map[22] = somas[0];
+      map[23] = somas[1];
+      map[24] = somas[2];
+      map[25] = somas[3];
+
+      map[0] = 0x2;
+      map[0] = 0x0;
+
+      media = map[26];
+
+      f_media[k] = *((float*)&media);
+      printf("média %d = %f \n",k+1, f_media[k]);
+
+    }
+
+
 
 
 //printf("%f\n",class_one_data[78][5]);
