@@ -24,7 +24,7 @@ float *mean_hw(float **class_data)
     int i,k;
     int fd;
     int result;
-    int *map;
+    float *map;
     int somas[4];
     int media;
     

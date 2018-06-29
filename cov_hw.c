@@ -24,7 +24,7 @@ float **cov_hw(float **class_data, float *f_media)
     int i,k;
     int fd;
     int result;
-    int *map;
+    float *map;
     float cov_res [6][6];
     int z,w,n;
     float cov;
