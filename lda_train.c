@@ -57,12 +57,15 @@ void main(void)
 
 
     mean_1 = media_hw(class_one_data);
-    mean_2 = media_hw(class_two_data);
-    
-    sigma_1 = cov_hw(class_one_data , mean_1);
-    sigma_2 = cov_hw(class_two_data , mean_2);
+//    mean_2 = media_hw(class_two_data);
+	
+//	for(i = 0; i<6; i++)
+//	printf("%f\n",mean_1[i]);
+	    
+  //  sigma_1 = cov_hw(class_one_data , mean_1);
+    //sigma_2 = cov_hw(class_two_data , mean_2);
 
-    s_sigma = sigma(sigma_1, sigma_2);
+   // s_sigma = sigma(sigma_1, sigma_2);
 
 
 
@@ -87,15 +90,15 @@ void main(void)
     	{
     		if(j <6 )
     		{
-    		printf("%f\t",s_sigma[i][j] );
-    		fprintf(lda_parameters, "%f\t",s_sigma[i][j]);
+//    		printf("%f\t",s_sigma[i][j] );
+ 		fprintf(lda_parameters, "%f\t",s_sigma[i][j]);
     		}
     		else
     			fprintf(lda_parameters,"\n");
     	}
     	
     }
-    printf("%f\n",s_sigma[1][2]);
+    //printf("%f\n",s_sigma[1][2]);
  }
 
 

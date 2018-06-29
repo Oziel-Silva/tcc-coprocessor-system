@@ -116,8 +116,8 @@ for(k=0; k<6; k++)
 }
 
 
-  return cov_res;
 
 
 }
+	return cov_res;
 }
