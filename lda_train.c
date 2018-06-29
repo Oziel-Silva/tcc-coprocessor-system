@@ -33,7 +33,7 @@
 	sigma = fopen("sigma.mat","w");
 	for(i=0; i < 6; i++)
 	{
-		for(j=0; j < 6; j++)
+		for(j=0; j < 7; j++)
 		{
 			if(j < 6)
 				fprintf(sigma,"%f\t",sig[i][j]);
