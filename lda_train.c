@@ -7,15 +7,38 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "mean.h"
-#include "cov.h"
-#include "cov_hw.h"
-#include "hwmedia.h"
+//#include "mean.h"
+//#include "cov.h"
+//#include "cov_hw.h"
 #include "sigma.h"
+#include "ip.h"
 
 
  void main(void)
 {
-	ip("class_one_data");
-	ip("class_two_data");
+	float **cov1;
+	float **cov2;
+	float **sig;
+	int i,j;
+
+	cov1 = ip("class_one_data");
+	cov2 = ip("class_two_data");
+	
+	sig = sigma(cov1, cov2);
+
+
+
+
+	FILE *sigma;
+	sigma = fopen("sigma.mat","w");
+	for(i=0; i < 6; i++)
+	{
+		for(j=0; j < 6; j++)
+		{
+			if(j < 6)
+				fprintf(sigma,"%f\t",sig[i][j]);
+			else
+				fprintf(sigma,"\n");
+		}
+	}
 }

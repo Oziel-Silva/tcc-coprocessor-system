@@ -19,7 +19,7 @@
 #define MAP_RANGE (0x10000)
 
 
-void ip(char *class)
+float **ip(char *class)
 {
     int buffer[40];
     int i,k;
@@ -30,11 +30,24 @@ void ip(char *class)
     int media;
     float f_media[6];
     int somatorio;
+	
+    
+	float **matrix_cov = (float**) malloc(sizeof(float*) * 6);
+	for(i=0; i < 6; i++)
+		{
+			matrix_cov[i] = (float*) malloc(sizeof(float)* 6);
+		}
+
+
+
+
 
 
     FILE *file;
+
     file = fopen(class,"r");
     fseek(file,0,SEEK_SET);
+
     /* Open a file for writing.
     *  - Creating the file if it doesn't exist.
     *  - Truncating it to 0 size if it already exists. (not really needed)
@@ -131,7 +144,7 @@ void ip(char *class)
       somas[3] = map[21];
 
       map[22] = somas[0];
-      map[23] = somas[1];ewd
+      map[23] = somas[1];
       map[24] = somas[2];
       map[25] = somas[3];
 
@@ -147,18 +160,15 @@ void ip(char *class)
 
 
 float class_one_data[80][6];
-float class_two_data[80][6];
 
 FILE *class_data_1;
-FILE *class_data_2;
 
 
-class_data_1= fopen("class_one_data","r");
+
+class_data_1= fopen(class,"r");
 fseek(class_data_1,0,SEEK_SET);
 
-class_data_2 = fopen("class_two_data","r");
-fseek(class_data_2,0,SEEK_SET);
- int j;
+int j;
 
 for(i = 0; i < 6; i++)
   {
@@ -167,21 +177,8 @@ for(i = 0; i < 6; i++)
           fscanf(class_data_1,"%f",&class_one_data[j][i]);
       }
    }               
-          
 
-for(i = 0; i < 6; i++)
-  {
-    for(j = 0; j < 80; j++)
-      {
-          fscanf(class_data_2,"%f",&class_two_data[j][i]);
-      }
-   }               
- 
-
-
-//printf("%f\n",class_one_data[78][5]);
 float cov_class_one [6][6];
-float cov_class_two [6][6];
 
 int z,w,n;
 float cov;
@@ -240,6 +237,7 @@ for( z = 0; z < 6 ; z++)
 		
 			
 		cov_class_one[w][z] = cov;
+		matrix_cov[w][z] = cov_class_one[w][z];
 		printf("a(%d,%d) = %f\n",w+1,z+1, cov_class_one[w][z]);
 
 	}
@@ -248,6 +246,6 @@ for( z = 0; z < 6 ; z++)
 
 
 
-
+return matrix_cov;
 
 }

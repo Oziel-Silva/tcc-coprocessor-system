@@ -1,0 +1,1 @@
+float **ip(char *class);
