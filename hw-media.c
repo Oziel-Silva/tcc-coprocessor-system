@@ -7,12 +7,12 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
-#define FILEPATH "/dev/mem"
+#define FILEPATH "/tmp/bin.bin"
 #define MAP_BASE (0x43C30000)
 #define MAP_RANGE (0x10000)
 
 
-float *media_hw(float **class_data)
+float *media(float **class_data)
 {
 
     int i,k;
@@ -83,8 +83,9 @@ float *media_hw(float **class_data)
 
 
         for(i=21;i<=40;i++)
+
            {
-                map[i-20] = class_data[i-1][0];
+                 map[i-20] = class_data[i-1][0];
             }
 
         map[0] = 0x01;
