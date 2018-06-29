@@ -7,20 +7,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include "data_loading.h"
-//#include "mean.h"
-//#include "cov.h"
+#include "mean.h"
+#include "cov.h"
 #include "cov_hw.h"
 #include "media_hw.h"
 #include "sigma.h"
 
 
-void main(void)
+ int main(void)
 {   
     int i,j;
-    float *mean_1, *mean_2, **sigma_1, **sigma_2, **s_sigma;
-    float *medias;
-    float **covariancia;
+    float *mean_1;
+    float *mean_2;
+    float **sigma_1;
+    float **sigma_2;
+    float **s_sigma;
+    
 
 
 
@@ -55,18 +57,16 @@ void main(void)
 		} 
 
 
+        mean_1 = mean(class_one_data);
+        mean_2 = mean(class_two_data);
 
-    mean_1 = media_hw(class_one_data);
-//    mean_2 = media_hw(class_two_data);
-	
-//	for(i = 0; i<6; i++)
-//	printf("%f\n",mean_1[i]);
-	    
-  //  sigma_1 = cov_hw(class_one_data , mean_1);
-    //sigma_2 = cov_hw(class_two_data , mean_2);
+        sigma_1 = cov(class_one_data , mean_1);
+        sigma_2 = cov(class_two_data , mean_2);
 
-   // s_sigma = sigma(sigma_1, sigma_2);
+        s_sigma = sigma(sigma_1, sigma_2);
 
+
+}
 
 
 
@@ -77,28 +77,26 @@ void main(void)
 
 
 
-
-
-    FILE *lda_parameters;
-    lda_parameters = fopen("lda_parameters.mat","w");
+//     FILE *lda_parameters;
+//     lda_parameters = fopen("lda_parameters.mat","w");
 
 
 
-    for (i = 0; i < 6; i++)
-    {
-    	for (j = 0; j < 7; j++)
-    	{
-    		if(j <6 )
-    		{
-//    		printf("%f\t",s_sigma[i][j] );
- 		fprintf(lda_parameters, "%f\t",s_sigma[i][j]);
-    		}
-    		else
-    			fprintf(lda_parameters,"\n");
-    	}
+//     for (i = 0; i < 6; i++)
+//     {
+//     	for (j = 0; j < 7; j++)
+//     	{
+//     		if(j <6 )
+//     		{
+// //    		printf("%f\t",s_sigma[i][j] );
+//  		fprintf(lda_parameters, "%f\t",s_sigma[i][j]);
+//     		}
+//     		else
+//     			fprintf(lda_parameters,"\n");
+//     	}
     	
-    }
-    //printf("%f\n",s_sigma[1][2]);
- }
+//     // }
+    
+   
 
 
