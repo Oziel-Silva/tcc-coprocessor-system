@@ -59,11 +59,11 @@
 
        // mean_1 = mean(class_one_data);
 	mean_2 = media();
-	for(i=0;i<7;i++)
-	printf("%f\n",mean_2[i]);
-        //sigma_1 = cov(class_one_data , mean_1);
-        //sigma_2 = cov(class_two_data , mean_2);
-
+	//sigma_1 = cov(class_one_data , mean_1);
+    sigma_2 = cov(class_two_data , mean_2);
+    for(i=0;i<7;i++)
+	printf("%f\n",sigma_2[i]);
+    
        // s_sigma = sigma(sigma_1, sigma_2);
 
 
