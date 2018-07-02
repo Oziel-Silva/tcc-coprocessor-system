@@ -20,14 +20,34 @@
 	float **cov2;
 	float **sig;
 	int i,j;
-for(i=0;i<10;i++)
-{
-	cov1 = ip("class_one_data");
-	cov2 = ip("class_two_data");
+	float **class_data_1;
+	float **class_data_2;
+
+FILE *class_1;
+FILE *class_2;
+
+class_1 = fopen("class_one_data", "r");
+class_2 = fopen("class_two_data", "r");
+
+
+for(i = 0; i < 6; i++)
+  {
+    for(k = 0; k < 80; k++)
+      {
+          fscanf(class_1,"%f",&class_data_1[k][i]);
+          fscanf(class_2,"%f",&class_data_2[k][i]);
+      }
+   }               
+
+   	media_1 = media(class_data_1);
+   	media_2 = media(class_data_2);
+
+	cov1 = cov(class_data_1, media_1);
+	cov2 = cov(class_data_2, media_2);
 	
 	sig = sigma(cov1, cov2);
 
-}
+
 
 
 	FILE *sigma;

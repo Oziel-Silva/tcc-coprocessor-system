@@ -13,10 +13,13 @@
 #include "hwmedia.h"
 #include "sigma.h"
 
-float **cov_hw(int x)
+float **cov_hw(float **class, float *media)
 {   
-    int i,j;
-    
+    int i,z,w,n;
+    int *map;
+    float *map_f;
+    float cov;
+    float sum_cov[4];
 
   float **matrix_cov = (float**) malloc(sizeof(float*) * 6);
   for(i=0; i < 6; i++)
@@ -25,61 +28,8 @@ float **cov_hw(int x)
     }
 
 
-
-
-
-
-    float class_one_data[80][6];
-    float class_two_data[80][6];
-
-    FILE *class_data_1;
-    FILE *class_data_2;
-
-
-    class_data_1= fopen("class_one_data","r");
-    fseek(class_data_1,0,SEEK_SET);
-
-    class_data_2 = fopen("class_two_data","r");
-    fseek(class_data_2,0,SEEK_SET);
-     int j;
-
-    for(i = 0; i < 6; i++)
-      {
-        for(j = 0; j < 80; j++)
-          {
-              fscanf(class_data_1,"%f",&class_one_data[j][i]);
-          }
-       }               
-              
-
-    for(i = 0; i < 6; i++)
-      {
-        for(j = 0; j < 80; j++)
-          {
-              fscanf(class_data_2,"%f",&class_two_data[j][i]);
-          }
-       }               
-     
-
-
-    //printf("%f\n",class_one_data[78][5]);
-    float cov_class_one [6][6];
-    int cov_class_two [6][6];
-
-    int z,w,n;
-    float cov;
-    float sum_cov[4];
-    float *map_f;
-
-
      map_f = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
-        if (map == MAP_FAILED)
-        {
-            close(fd);
-            perror("Error mmapping the file");
-            exit(EXIT_FAILURE);
-        }
-
+     map   = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
 
 
 
@@ -89,25 +39,25 @@ float **cov_hw(int x)
       { cov = 0;
         for(n = 0; n < 80; n++)
         {
-          map_f[27] = class_one_data[n][z];
-          map_f[28] = f_media[z];
-          map_f[29] = class_one_data[n][w];
-          map_f[30] = f_media[w];
+          map_f[27] = class[n][z];
+          map_f[28] = media[z];
+          map_f[29] = class[n][w];
+          map_f[30] = media[w];
           
-          map_f[31] = class_one_data[n + 1][z];
-          map_f[32] = f_media[z];
-          map_f[33] = class_one_data[n + 1][w];
-          map_f[34] = f_media[w];
+          map_f[31] = class[n + 1][z];
+          map_f[32] = media[z];
+          map_f[33] = class[n + 1][w];
+          map_f[34] = media[w];
         
-          map_f[35] = class_one_data[n + 2][z];
-          map_f[36] = f_media[z];
-          map_f[37] = class_one_data[n + 2][w];
-          map_f[38] = f_media[w];
+          map_f[35] = class[n + 2][z];
+          map_f[36] = media[z];
+          map_f[37] = class[n + 2][w];
+          map_f[38] = media[w];
           
-          map_f[39] = class_one_data[n + 3][z];
-          map_f[40] = f_media[z];
-          map_f[41] = class_one_data[n + 3][w];
-          map_f[42] = f_media[w];
+          map_f[39] = class[n + 3][z];
+          map_f[40] = media[z];
+          map_f[41] = class[n + 3][w];
+          map_f[42] = media[w];
           
           map[0] = 0x4;
           map[0] = 0x0;
@@ -123,7 +73,7 @@ float **cov_hw(int x)
         
           
         matrix_cov[w][z] = cov;
-        printf("a(%d,%d) = %f\n",w+1,z+1, matrix_cov[w][z]);
+        //printf("a(%d,%d) = %f\n",w+1,z+1, matrix_cov[w][z]);
 
       }
     }
