@@ -20,13 +20,14 @@
 	float **cov2;
 	float **sig;
 	int i,j;
-
+for(i=0;i<10;i++)
+{
 	cov1 = ip("class_one_data");
 	cov2 = ip("class_two_data");
 	
 	sig = sigma(cov1, cov2);
 
-
+}
 
 
 	FILE *sigma;

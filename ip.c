@@ -21,16 +21,16 @@
 
 float **ip(char *class)
 {
-    int buffer[40];
     int i,k;
     int fd;
     int result;
     int *map;
-    int somas[4];
-    int media;
+    float *map_f;
+    int soma_aux;
+    float somas[4];
+    float media;
     float f_media[6];
-    int somatorio;
-	
+    float class_one_data[80][6];	
     
 	float **matrix_cov = (float**) malloc(sizeof(float*) * 6);
 	for(i=0; i < 6; i++)
@@ -89,6 +89,20 @@ float **ip(char *class)
         exit(EXIT_FAILURE);
     }
 
+ map_f = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
+    if (map == MAP_FAILED)
+    {
+        close(fd);
+        perror("Error mmapping the file");
+        exit(EXIT_FAILURE);
+    }
+
+
+
+
+
+
+
 
     map = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
     if (map == MAP_FAILED)
@@ -100,66 +114,82 @@ float **ip(char *class)
 
     //for para pegar toda as médias (6 médias)
 
+	
+for(i = 0; i < 6; i++)
+  {
+    for(k = 0; k < 80; k++)
+      {
+          fscanf(file,"%f",&class_one_data[k][i]);
+      }
+   }               
+
+
+
 
       for(k=0; k<6; k++)
       {
           for(i=1;i<=20;i++)
           {
-              fscanf(file,"%f",&map[i]);
+             // fscanf(file,"%f",&map[i]);
+		map_f[i] = class_one_data[i-1][k];
           }
 
-          map[0] = 0x1;
+         map[0] = 0x1;
          map[0] = 0x00;
 
-          somas[0] = map[21];
-
+        somas[0] = map_f[21];
+	printf("%f\n",somas[0]);
       for(i=21;i<=40;i++)
           {
-              fscanf(file,"%f",&map[i-20]);
+             	map_f[i-20] = class_one_data[i-1][k];
+		 //fscanf(file,"%f",&map[i-20]);
           }
 
       map[0] = 0x01;
       map[0] = 0x00;
 
-      somas[1] = map[21];
+      somas[1] = map_f[21];
 
       for(i=41;i<=60;i++)
           {
-              fscanf(file,"%f",&map[i-40]);
+              	map_f[i-40] = class_one_data[i-1][k];
+		//fscanf(file,"%f",&map[i-40]);
           }
 
       map[0] = 0x01;
       map[0] = 0x00;
 
-      somas[2] = map[21];
+      somas[2] = map_f[21];
 
       for(i=61;i<=80;i++)
           {
-              fscanf(file,"%f",&map[i-60]);
+             	map_f[i-60] = class_one_data[i-1][k];
+		// fscanf(file,"%f",&map[i-60]);
           }
-
+      
       map[0] = 0x01;
       map[0] = 0x00;
 
-      somas[3] = map[21];
+      somas[3] = map_f[21];
 
-      map[22] = somas[0];
-      map[23] = somas[1];
-      map[24] = somas[2];
-      map[25] = somas[3];
+      map_f[22] = somas[0];
+      map_f[23] = somas[1];
+      map_f[24] = somas[2];
+      map_f[25] = somas[3];
 
       map[0] = 0x2;
       map[0] = 0x0;
 
-      media = map[26];
+      media = map_f[26];
 
-      f_media[k] = *((float*)&media);
-      printf("média %d = %f \n",k+1, f_media[k]);
+    //  f_media[k] = *((float*)&media);
+      f_media[k] = media;
+//	printf("média %d = %f \n",k+1, f_media[k]);
 
     }
 
 
-float class_one_data[80][6];
+
 
 FILE *class_data_1;
 
@@ -169,7 +199,7 @@ class_data_1= fopen(class,"r");
 fseek(class_data_1,0,SEEK_SET);
 
 int j;
-
+/*
 for(i = 0; i < 6; i++)
   {
     for(j = 0; j < 80; j++)
@@ -179,21 +209,11 @@ for(i = 0; i < 6; i++)
    }               
 
 float cov_class_one [6][6];
+*/
 
 int z,w,n;
 float cov;
 float sum_cov[4];
-float *map_f;
-
-
- map_f = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
-    if (map == MAP_FAILED)
-    {
-        close(fd);
-        perror("Error mmapping the file");
-        exit(EXIT_FAILURE);
-    }
-
 
 
 
