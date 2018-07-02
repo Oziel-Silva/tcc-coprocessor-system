@@ -1,1 +1,1 @@
-float **cov_hw(int x);
+float **cov_hw(float **class, float *media);

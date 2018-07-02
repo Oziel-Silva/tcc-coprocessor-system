@@ -5,18 +5,17 @@ float *mean(float **matriz)
 {
 	int i,j;
 	
-	float **mat = matriz;
 	float *mean_mat = (float*) malloc(sizeof(float)* 6);
+	float soma;
 	
 	for(i = 0; i < 6; i++)
-	{
+	{	soma = 0;
 		for (j = 0; j < 80; j++)
 		{
-			mean_mat[i] = (mean_mat[i] + mat[j][i]) ;
+			soma = (soma + matriz[j][i]) ;
 		}
 		
-		mean_mat[i] = mean_mat[i]/80;
-		printf("%f\n",mean_mat[i] );
+		mean_mat[i] = soma/80;
 
 	}
 

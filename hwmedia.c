@@ -12,21 +12,18 @@
 #define MAP_RANGE (0x10000)
 
 
-float *media(float **class)
+float *media_hw(float **class)
 {
 
     int i,k;
     int fd;
-    int result;
     int *map;
-    int somas[4];
-    int media;
+    float somas[4];
+    float media;
     float *map_f;
    
     float *f_media = (float*) malloc(sizeof(float)* 6);
 	
-
-
     fd = open(FILEPATH, O_RDWR | O_CREAT | O_TRUNC, (mode_t)0600);
 
     map   = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
@@ -43,7 +40,7 @@ float *media(float **class)
            map[0] = 0x00;
 
            somas[0] = map_f[21];  
-    
+
       for(i=21;i<=40;i++)
           {
               map_f[i-20] = class[i-1][k];

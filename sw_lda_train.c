@@ -9,10 +9,7 @@
 #include <stdlib.h>
 #include "mean.h"
 #include "cov.h"
-#include "cov_hw.h"
-#include "hwmedia.h"
 #include "sigma.h"
-#include "ip.h"
 
 
  void main(void)
@@ -52,13 +49,13 @@ for(i = 0; i < 6; i++)
    }               
 
 
-for(i=0;i<5;i++)
+for(i=0;i<500;i++)
 {
-  	media_1 = media_hw(class_data_1);
-	media_2 = media_hw(class_data_2);
+  	media_1 = mean(class_data_1);
+	media_2 = mean(class_data_2);
 	
-	cov1 = cov_hw(class_data_1, media_1);
-	cov2 = cov_hw(class_data_2, media_2);
+	cov1 = cov(class_data_1, media_1);
+	cov2 = cov(class_data_2, media_2);
 	
 	sig = sigma(cov1, cov2);
 

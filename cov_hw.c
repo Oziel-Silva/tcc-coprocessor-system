@@ -5,6 +5,11 @@
 -- Project Name: Trabalho de Conclusão de Curso de Engenharia Eletrônica
 ############################################################################*/
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "mean.h"
@@ -13,9 +18,18 @@
 #include "hwmedia.h"
 #include "sigma.h"
 
+
+#define FILEPATH "/dev/mem"
+#define MAP_BASE (0x43C30000)
+#define MAP_RANGE (0x10000)
+
+
+
+
+
 float **cov_hw(float **class, float *media)
 {   
-    int i,z,w,n;
+    int i,z,w,n,fd;
     int *map;
     float *map_f;
     float cov;
@@ -27,7 +41,7 @@ float **cov_hw(float **class, float *media)
       matrix_cov[i] = (float*) malloc(sizeof(float)* 6);
     }
 
-
+     fd = open(FILEPATH, O_RDWR | O_CREAT | O_TRUNC, (mode_t)0600);
      map_f = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
      map   = mmap(0, MAP_RANGE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, MAP_BASE);
 

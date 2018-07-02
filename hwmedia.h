@@ -1,1 +1,1 @@
-float *media(void);
+float *media_hw(float **class);
