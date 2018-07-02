@@ -236,9 +236,7 @@ for( z = 0; z < 6 ; z++)
 		}
 		
 			
-		cov_class_one[w][z] = cov;
-		matrix_cov[w][z] = cov_class_one[w][z];
-		printf("a(%d,%d) = %f\n",w+1,z+1, cov_class_one[w][z]);
+		matrix_cov[w][z] = cov;
 
 	}
 }
