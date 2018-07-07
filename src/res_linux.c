@@ -7,12 +7,9 @@
 
 #include  <stdio.h>
 #include  <stdlib.h>
-// #include "data_loading.h"
- #include "mean.h"
- #include "cov.h"
-//# include  " cov_hw.h "
-//# include  " media_hw.h "
-#include  "sigma.h"
+#include "../bib/mean.h"
+#include "../bib/cov.h"
+#include  "../bib/sigma.h"
 
 
 int main ( void )
@@ -20,17 +17,22 @@ int main ( void )
     int i, j;
     float *mean_1, *mean_2, **sigma_1, **sigma_2, **s_sigma;
     
-    float **class_one_data;
-    float **class_two_data;
+    float **class_one_data =  (float**) malloc(sizeof(float*) * 80);
+    float **class_two_data =  (float**) malloc(sizeof(float*) * 80);
+for(i = 0; i < 80; i++)
+    {
+	class_one_data[i] = (float*) malloc(sizeof(float*) * 6);
+	class_two_data[i] = (float*) malloc(sizeof(float*) * 6);
+    }
 
 	FILE *class_data_1;
 	FILE *class_data_2;
 
 	
-	class_data_1 = fopen("class_one_data","r");
+	class_data_1 = fopen("../data/class_one_data","r");
 	fseek(class_data_1,0,SEEK_SET);
 
-	class_data_2 = fopen("class_two_data","r");
+	class_data_2 = fopen("../data/class_two_data","r");
 	fseek(class_data_2,0,SEEK_SET);
 	
 
@@ -45,7 +47,6 @@ int main ( void )
 
 
 
-
     mean_1 = mean(class_one_data);
     mean_2 = mean(class_two_data);
 	
@@ -57,7 +58,7 @@ int main ( void )
 
 
     FILE *lda_parameters;
-    lda_parameters = fopen ( "lda_parameters.mat" , "w" );
+    lda_parameters = fopen ( "../lda_parameters_linux_i5.mat" , "w" );
 
 
 

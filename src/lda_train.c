@@ -7,12 +7,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "mean.h"
-#include "cov.h"
-#include "cov_hw.h"
-#include "hwmedia.h"
-#include "sigma.h"
-#include "ip.h"
+#include "../bib/cov_hw.h"
+#include "../bib/hwmedia.h"
+#include "../bib/sigma.h"
+#include "../bib/ip.h"
 
 
  void main(void)
@@ -65,7 +63,7 @@ for(i=0;i<5;i++)
 }
 	
 	FILE *sigma;
-	sigma = fopen("sigma.mat","w");
+	sigma = fopen("../sigma_arm_32.mat","w");
 	for(i=0; i < 6; i++)
 	{
 		for(j=0; j < 7; j++)
