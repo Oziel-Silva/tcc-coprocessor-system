@@ -1,7 +1,7 @@
 /*--Engineers: Oziel da Silva & Heleno da Silva
 -- Create Date: 20.06.2018
 -- Design Name: LDA_TRAIN
--- Module Name: media.c
+-- Module Name: main function 
 -- Project Name: Trabalho de Conclusão de Curso de Engenharia Eletrônica
 ############################################################################*/
 
@@ -24,6 +24,9 @@
 
 FILE *class_1;
 FILE *class_2;
+FILE *sigma;
+
+sigma = fopen("../sigma_arm_32.mat","w");
 
 class_1 = fopen("class_one_data", "r");
 fseek(class_1,0,SEEK_SET);
@@ -61,9 +64,7 @@ for(i=0;i<5;i++)
 	sig = sigma(cov1, cov2);
 
 }
-	
-	FILE *sigma;
-	sigma = fopen("../sigma_arm_32.mat","w");
+
 	for(i=0; i < 6; i++)
 	{
 		for(j=0; j < 7; j++)
