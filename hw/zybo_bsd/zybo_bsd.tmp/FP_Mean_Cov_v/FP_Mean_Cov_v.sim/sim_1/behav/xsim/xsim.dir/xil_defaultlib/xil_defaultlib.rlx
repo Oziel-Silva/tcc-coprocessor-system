@@ -1,0 +1,13 @@
+0.6
+2017.4
+Dec 15 2017
+20:57:24
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/hdl/FP_Mean_Cov_v1_0_S00_AXI.vhd,1529851149,vhdl,,,,fp_mean_cov_v1_0_s00_axi,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/Equacao_Cov.vhd,1529848039,vhdl,,,,equacao_cov,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/FP_Sum_4n.vhd,1529848039,vhdl,,,,fp_sum_4n,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/addsubfsm_v6.vhd,1529848039,vhdl,,,,addsubfsm_v6,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/divNR.vhd,1529848039,vhdl,,,,divnr,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/entities.vhd,1529848039,vhdl,/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/hdl/FP_Mean_Cov_v1_0_S00_AXI.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/Equacao_Cov.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/FP_Sum_4n.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/divNR.vhd,,,entities,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/fixMul.vhd,1529848039,vhdl,,,,fixmul,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/fpupack.vhd,1529848039,vhdl,/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/hdl/FP_Mean_Cov_v1_0_S00_AXI.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/Equacao_Cov.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/FP_Sum_4n.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/addsubfsm_v6.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/divNR.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/entities.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/fixMul.vhd;/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/multiplierfsm_v2.vhd,,,fpupack,,,,,,,,
+/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/multiplierfsm_v2.vhd,1529848039,vhdl,,,,multiplierfsm_v2,,,,,,,,

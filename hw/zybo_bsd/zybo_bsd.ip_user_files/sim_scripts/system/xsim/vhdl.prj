@@ -1,0 +1,47 @@
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_axi_dispctrl_0_0/work/hdl/axi_dispctrl_v1_0.vhd" \
+"../../../bd/system/ip/system_axi_dispctrl_0_0/work/hdl/vdma_to_vga.vhd" \
+"../../../bd/system/ip/system_axi_dispctrl_0_0/work/hdl/axi_dispctrl_v1_0_S_AXI.vhd" \
+
+vhdl axi_i2s_adi_v1_00_a  \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/axi_i2s_adi_v1_00_a/hdl/i2s_tx.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/axi_i2s_adi_v1_00_a/hdl/i2s_controller.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/work/hdl/axi_i2s_adi.vhd" \
+
+vhdl axi_i2s_adi_v1_00_a  \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/axi_i2s_adi_v1_00_a/hdl/fifo_synchronizer.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/axi_i2s_adi_v1_00_a/hdl/i2s_rx.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/axi_i2s_adi_v1_00_a/hdl/i2s_clkgen.vhd" \
+
+vhdl adi_common_v1_00_a  \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/adi_common_v1_00_a/hdl/adi_common/axi_streaming_dma_rx_fifo.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/adi_common_v1_00_a/hdl/adi_common/axi_ctrlif.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/adi_common_v1_00_a/hdl/adi_common/pl330_dma_fifo.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/adi_common_v1_00_a/hdl/adi_common/axi_streaming_dma_tx_fifo.vhd" \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/adi_common_v1_00_a/hdl/adi_common/dma_fifo.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_axi_i2s_adi_1_0/sim/system_axi_i2s_adi_1_0.vhd" \
+"../../../bd/system/ip/system_axi_vdma_0_0/sim/system_axi_vdma_0_0.vhd" \
+"../../../bd/system/ip/system_axi_vdma_1_1/sim/system_axi_vdma_1_1.vhd" \
+"../../../bd/system/ip/system_hdmi_tx_0_0/work/hdl/hdmi_tx.vhd" \
+"../../../bd/system/ip/system_hdmi_tx_0_0/work/hdl/TMDSEncoder.vhd" \
+"../../../bd/system/ip/system_hdmi_tx_0_0/work/hdl/SerializerN_1.vhd" \
+"../../../bd/system/ip/system_hdmi_tx_0_0/work/hdl/DVITransmitter.vhd" \
+"../../../bd/system/ip/system_hdmi_tx_0_0/sim/system_hdmi_tx_0_0.vhd" \
+"../../../bd/system/ipshared/e5a4/src/fpupack.vhd" \
+"../../../bd/system/ipshared/e5a4/src/entities.vhd" \
+"../../../bd/system/ipshared/e5a4/src/Equacao_Cov.vhd" \
+"../../../bd/system/ipshared/e5a4/hdl/FP_Mean_Cov_v1_0_S00_AXI.vhd" \
+"../../../bd/system/ipshared/e5a4/src/FP_Sum_4n.vhd" \
+"../../../bd/system/ipshared/e5a4/src/addsubfsm_v6.vhd" \
+"../../../bd/system/ipshared/e5a4/src/divNR.vhd" \
+"../../../bd/system/ipshared/e5a4/src/fixMul.vhd" \
+"../../../bd/system/ipshared/e5a4/src/multiplierfsm_v2.vhd" \
+"../../../bd/system/ipshared/e5a4/hdl/FP_Mean_Cov_v1_0.vhd" \
+"../../../bd/system/ip/system_FP_Mean_Cov_0_0/sim/system_FP_Mean_Cov_0_0.vhd" \
+"../../../bd/system/sim/system.vhd" \
+
+nosort

@@ -1,0 +1,16 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/fpupack.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/entities.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/Equacao_Cov.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Equacao_Cov
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/FP_Sum_4n.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FP_Sum_4n
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/addsubfsm_v6.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity addsubfsm_v6
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/divNR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity divNR
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/fixMul.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fixMul
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/src/multiplierfsm_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity multiplierfsm_v2
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zizi/Downloads/zybo_base_system/source/vivado/hw/ip_repo/FP_Mean_Cov_1.0/hdl/FP_Mean_Cov_v1_0_S00_AXI.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FP_Mean_Cov_v1_0_S00_AXI
